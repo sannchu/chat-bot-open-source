@@ -1,6 +1,7 @@
 "use client";
 
 import { useChat } from "ai/react";
+import Image from "next/image";
 import React, { FormEvent, useState } from "react";
 import TextareaAutosize from "react-textarea-autosize";
 import SelectCharacter from "@/components/selectCharacter";
@@ -83,9 +84,9 @@ export default function Chat() {
                 maxRows={4}
               ></TextareaAutosize>
 
-              <button className="mr-1" type="submit">
-                <img src="/arrow-right.svg" alt="arrow" />
-              </button>
+              <a className="mr-1" type="submit">
+                <Image src="/arrow-right.svg" alt="arrow"></Image>
+              </a>
             </form>
           </div>
         </div>
