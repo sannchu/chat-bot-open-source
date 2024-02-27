@@ -49,9 +49,8 @@ export default function Chat() {
           <SelectCharacter onValueChange={handleSelectCharacterChange} />
         </div>
         {messages.map((m) => (
-          <div className="w-full px-4 ">
+          <div key={m.id} className="w-full px-4 ">
             <div
-              key={m.id}
               className={
                 m.role === "user"
                   ? "rounded-3xl bg-slate-600 text-white"
@@ -85,7 +84,12 @@ export default function Chat() {
               ></TextareaAutosize>
 
               <a className="mr-1" type="submit">
-                <Image src="/arrow-right.svg" alt="arrow"></Image>
+                <Image
+                  src="/arrow-right.svg"
+                  width={36}
+                  height={36}
+                  alt="arrow"
+                ></Image>
               </a>
             </form>
           </div>
