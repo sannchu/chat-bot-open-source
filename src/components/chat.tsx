@@ -43,7 +43,7 @@ export default function Chat() {
     }
   };
   return (
-    <div className="flex w-full flex-none flex-col  ">
+    <div className="flex h-auto w-full flex-none flex-col  ">
       <div className="min-w-xl w-full   max-w-full flex-col scroll-auto py-24 ">
         <div className="fixed top-0  mx-auto w-full max-w-lg bg-slate-900  py-2 ">
           <SelectCharacter onValueChange={handleSelectCharacterChange} />
@@ -67,32 +67,30 @@ export default function Chat() {
           </div>
         ))}
 
-        <div className="  min-w-2xl   fixed bottom-0 flex  w-full max-w-2xl bg-slate-900 pt-2  ">
-          <div className=" flex w-full  ">
-            <form
-              className="mb-8 flex w-full rounded-3xl border border-gray-400 bg-slate-200 p-2 shadow-2xl"
-              onSubmit={handleSubmit}
-            >
-              <TextareaAutosize
-                className="max-h-15 flex w-full resize-none bg-slate-200 outline-none "
-                value={input}
-                placeholder="Type here!"
-                onChange={handleInputChange}
-                onKeyDown={handleKeyDown}
-                rows={1}
-                maxRows={4}
-              ></TextareaAutosize>
+        <div className="min-w-2xl absolute  bottom-0 flex  w-full max-w-2xl bg-slate-900 pt-2">
+          <form
+            className="mb-8 flex w-full rounded-3xl border border-gray-400 bg-slate-200 p-2 shadow-2xl"
+            onSubmit={handleSubmit}
+          >
+            <TextareaAutosize
+              className="max-h-15 flex w-full resize-none items-center bg-slate-200 pt-1 outline-none "
+              value={input}
+              placeholder="Type here!"
+              onChange={handleInputChange}
+              onKeyDown={handleKeyDown}
+              rows={1}
+              maxRows={4}
+            ></TextareaAutosize>
 
-              <a className="mr-1" type="submit">
-                <Image
-                  src="/arrow-right.svg"
-                  width={36}
-                  height={36}
-                  alt="arrow"
-                ></Image>
-              </a>
-            </form>
-          </div>
+            <button className="mr-1" type="submit" title="Submit">
+              <Image
+                src="/arrow-right.svg"
+                width={36}
+                height={36}
+                alt="arrow"
+              ></Image>
+            </button>
+          </form>
         </div>
       </div>
     </div>
